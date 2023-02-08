@@ -8,7 +8,7 @@ export type Theme = ReturnType<typeof theme.useToken>;
 export type CssFunctionInput<Input = any, Params = any> = (theme: Theme, params?: Params) => Input;
 
 export const createStyles = <Params = any, Input extends Record<string, CSSInterpolation> = Record<string, CSSInterpolation>>(cb: CssFunctionInput<Input, Params>) => {
-  function useStyles(params: Params) {
+  function useStyles(params?: Params) {
     const themeLocale = useToken();
     const cssObj = cb(themeLocale, params);
 
