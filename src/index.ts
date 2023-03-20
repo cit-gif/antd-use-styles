@@ -31,5 +31,5 @@ export const createStyles = <Params = any, Input extends Record<string, CSSInter
 export type CssFunction = (params: Theme) => CSSInterpolation;
 export const useStyles = (cb: CssFunction) => {
   const themeLocale = useToken();
-  return css(cb(themeLocale));
+  return useMemo(() => css(cb(themeLocale)), [themeLocale, cb]);
 };

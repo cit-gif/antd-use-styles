@@ -21,10 +21,10 @@ export default defineConfig({
       output: {
         globals: {
           react: 'react',
-          antd:'antd'
+          antd: 'antd',
+          '@emotion/css':'@emotion/css'
         },
-
-      }
+      },
     }
   }
 });
